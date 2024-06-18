@@ -66,6 +66,10 @@ body {
   color: red;
 }
 
+.optional{
+  color: blue;
+}
+
 .input-default {
   width: 100%;
   padding: 10px;
