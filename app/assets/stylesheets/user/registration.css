@@ -1,11 +1,14 @@
 body {
   background-color: #e0f2f5;
   font-family: Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+.form-main{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
 }
 
 .form-wrap {

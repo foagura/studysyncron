@@ -1,0 +1,19 @@
+.top-page-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  margin-bottom: 20px;
+}
+
+.title{
+  font-size: 32px;
+}
+
+.nav ul{
+  display: flex;
+}
+
+.nav li{
+  margin-left: 15px;
+}
