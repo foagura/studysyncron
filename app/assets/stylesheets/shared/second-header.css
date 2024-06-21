@@ -1,0 +1,9 @@
+.second-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-title{
+  font-size: 40px;
+}
