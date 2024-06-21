@@ -9,7 +9,8 @@
       </h1>
     </div>
 
-    <%= render 'shared/error_messages', model: @user %>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
 
     <div class="form-group">
       <div class='form-text-wrap'>
