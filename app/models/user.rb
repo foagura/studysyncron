@@ -7,5 +7,5 @@ class User < ApplicationRecord
   validates :nickname, presence: true
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\Z/i
-  validates :password, format: { with: PASSWORD_REGEX, message: 'には英語と数字両方を含めてください' }
+  validates :password, format: { with: PASSWORD_REGEX, message: 'には半角の英語と数字両方を含めてください' }
 end
