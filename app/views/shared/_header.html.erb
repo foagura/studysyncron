@@ -1,11 +1,11 @@
 <header class='top-page-header'>
   <div class='title'>
-    <h1>Study Syncron</h1>
+    <%= link_to 'Study Syncron', root_path %>
   </div>
   <div class='nav'>
     <ul>
       <% if user_signed_in? %>
-        <li><%= current_user.nickname %></li>
+        <li><%= link_to "#{current_user.nickname}", user_path(current_user.id) %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %></li>
         <li><%= link_to 'カレンダー', '#' %></li>
         <li><%= link_to '投稿', '#' %></li>

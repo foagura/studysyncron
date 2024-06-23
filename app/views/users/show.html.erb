@@ -1,0 +1,79 @@
+<%= render 'shared/header' %>
+
+<div class='main'>
+  <div class="container">
+    <%= render 'shared/sidebar' %>
+
+    <div class="main-content">
+      <div class="mypage">
+        <div class="myprofile">
+          <div class="profile-header">
+            <div class="profile-pic">
+              <!-- プロフィール画像を表示 -->
+              <%= image_tag @user.image, alt: "Profile Picture", class: "avatar" %>
+            </div>
+            <div class="profile-name">
+              <h2><%= @user.nickname %></h2>
+            </div>
+          </div>
+          <div class="profile-details">
+            <div class="profile-item">
+              <h3>自己紹介</h3>
+              <p><%= @user.profile %></p>
+            </div>
+            <div class="profile-item">
+              <h3>学習時間</h3>
+              <p><%= '#' %> 時間</p>
+            </div>
+          </div>
+          <div class="edit-button">
+            <%= link_to '編集', '#', class: 'btn btn-primary' %>
+          </div>
+        </div>
+
+        <div class="content-box">
+          <div class="header">
+            <div class="search-bar">
+              <input type="text" placeholder="検索...">
+            </div>
+            <div class="user-info">
+              <div class="user-icon">👤</div>
+              <div class="user-name">user</div>
+              <div class="notifications">🔔</div>
+              <div class="settings">⚙️</div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="post">
+              <div class="post-header">
+                <div class="post-user">ユーザー名</div>
+                <div class="post-date">2024-06-20</div>
+              </div>
+              <div class="post-body">
+                <p>投稿内容1</p>
+              </div>
+            </div>
+            <div class="post">
+              <div class="post-header">
+                <div class="post-user">ユーザー名</div>
+                <div class="post-date">2024-06-19</div>
+              </div>
+              <div class="post-body">
+                <p>投稿内容2</p>
+              </div>
+            </div>
+            <div class="post">
+              <div class="post-header">
+                <div class="post-user">ユーザー名</div>
+                <div class="post-date">2024-06-18</div>
+              </div>
+              <div class="post-body">
+                <p>投稿内容3</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

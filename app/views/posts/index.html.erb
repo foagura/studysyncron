@@ -2,56 +2,48 @@
 
 <div class='main'>
   <div class="container">
-    <div class="sidebar">
-      <div class="sidebar-header">
-        <h1>ロゴ</h1>
-      </div>
-      <ul class="sidebar-menu">
-        <li>ホーム</li>
-        <li>プロフィール</li>
-        <li>メッセージ</li>
-        <li>設定</li>
-        <li>ログアウト</li>
-      </ul>
-    </div>
+    <%= render 'shared/sidebar' %>
+
     <div class="main-content">
-      <div class="header">
-        <div class="search-bar">
-          <input type="text" placeholder="検索...">
-        </div>
-        <div class="user-info">
-          <div class="user-icon">👤</div>
-          <div class="user-name">user</div>
-          <div class="notifications">🔔</div>
-          <div class="settings">⚙️</div>
-        </div>
-      </div>
-      <div class="content">
-        <div class="post">
-          <div class="post-header">
-            <div class="post-user">ユーザー名</div>
-            <div class="post-date">2024-06-20</div>
+      <div class="content-box">
+        <div class="header">
+          <div class="search-bar">
+            <input type="text" placeholder="検索...">
           </div>
-          <div class="post-body">
-            <p>投稿内容1</p>
+          <div class="user-info">
+            <div class="user-icon">👤</div>
+            <div class="user-name">user</div>
+            <div class="notifications">🔔</div>
+            <div class="settings">⚙️</div>
           </div>
         </div>
-        <div class="post">
-          <div class="post-header">
-            <div class="post-user">ユーザー名</div>
-            <div class="post-date">2024-06-19</div>
+        <div class="content">
+          <div class="post">
+            <div class="post-header">
+              <div class="post-user">ユーザー名</div>
+              <div class="post-date">2024-06-20</div>
+            </div>
+            <div class="post-body">
+              <p>投稿内容1</p>
+            </div>
           </div>
-          <div class="post-body">
-            <p>投稿内容2</p>
+          <div class="post">
+            <div class="post-header">
+              <div class="post-user">ユーザー名</div>
+              <div class="post-date">2024-06-19</div>
+            </div>
+            <div class="post-body">
+              <p>投稿内容2</p>
+            </div>
           </div>
-        </div>
-        <div class="post">
-          <div class="post-header">
-            <div class="post-user">ユーザー名</div>
-            <div class="post-date">2024-06-18</div>
-          </div>
-          <div class="post-body">
-            <p>投稿内容3</p>
+          <div class="post">
+            <div class="post-header">
+              <div class="post-user">ユーザー名</div>
+              <div class="post-date">2024-06-18</div>
+            </div>
+            <div class="post-body">
+              <p>投稿内容3</p>
+            </div>
           </div>
         </div>
       </div>
