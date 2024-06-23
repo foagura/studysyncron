@@ -16,7 +16,7 @@
 }
 
 .sidebar-header h1 {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .sidebar-menu {
@@ -26,6 +26,7 @@
 }
 
 .sidebar-menu li {
+  font-size: 16px;
   padding: 10px;
   margin-bottom: 10px;
   text-align: center;
