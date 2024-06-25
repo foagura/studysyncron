@@ -1,0 +1,38 @@
+<%= render 'shared/header' %>
+
+<div class="new-post-container">
+  <div class="new-post-left">
+    <div class="new-post-header">
+      <h1>新規投稿</h1>
+    </div>
+    <%= form_with model: @post, url: posts_path, local: true do |f| %>
+      <div class="form-group">
+        <%= f.label :title, "タイトル", class: "form-label" %>
+        <%= f.text_field :title, class: "form-input", placeholder: "タイトルを入力" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :category, "カテゴリー", class: "form-label" %>
+        <%= f.select :category, options_for_select([['カテゴリー1', 'category1'], ['カテゴリー2', 'category2'], ['カテゴリー3', 'category3']]), {}, class: "form-input" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :content, "内容", class: "form-label" %>
+        <%= f.text_area :content, class: "form-input content-input", rows: 10, placeholder: "ここに内容を入力" %>
+      </div>
+      <div class="form-group form-buttons">
+        <%= f.submit "投稿する", class: "form-button submit-button" %>
+        <%= link_to "キャンセル", posts_path, class: "form-button cancel-button" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="new-post-right">
+    <div class="post-preview-header">
+      <h2>プレビュー</h2>
+    </div>
+    <div class="post-preview">
+      <!-- 投稿内容のプレビュー表示。リアルタイムプレビューを行うためのJavaScriptが必要。 -->
+      <div class="preview-title"></div>
+      <div class="preview-category"></div>
+      <div class="preview-content"></div>
+    </div>
+  </div>
+</div>

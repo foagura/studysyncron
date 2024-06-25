@@ -1,0 +1,104 @@
+.new-post-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  min-height: 80vh;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.new-post-left, .new-post-right {
+  width: 48%;
+}
+
+.new-post-header, .post-preview-header {
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.new-post-header h1, .post-preview-header h2 {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #555;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.content-input {
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.cancel-button {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.cancel-button:hover {
+  background-color: #5a6268;
+}
+
+.post-preview {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.preview-title, .preview-category, .preview-content {
+  margin-bottom: 20px;
+}
+
+.preview-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.preview-category {
+  font-size: 16px;
+  color: #777;
+}
+
+.preview-content {
+  font-size: 16px;
+  color: #333;
+}
