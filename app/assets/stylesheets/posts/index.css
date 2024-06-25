@@ -87,3 +87,16 @@ a{
 .post-body p {
   margin: 0;
 }
+
+.post-footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-nav ul{
+  display: flex;
+}
+
+.post-nav li{
+  margin-left: 15px;
+}
