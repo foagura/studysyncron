@@ -6,17 +6,34 @@
       <h1>新規投稿</h1>
     </div>
     <%= form_with model: @post, url: posts_path, local: true do |f| %>
+
+      <%= render 'shared/error_messages', model: @post %>
+
+      <div class="form-group">
+        <%= f.label :study_hours, "今日の学習時間", class: "form-label" %>
+        <div class="form-study-times">
+          <%= f.number_field :study_hours, class: "form-input-times", in: 0..23 %>時間
+          <%= f.number_field :study_minutes, class: "form-input-times", in: 0..59 %>分
+        </div>
+      </div>
       <div class="form-group">
         <%= f.label :title, "タイトル", class: "form-label" %>
         <%= f.text_field :title, class: "form-input", placeholder: "タイトルを入力" %>
       </div>
+      
+      <%#= タグ追加用コメントアウト %>
       <div class="form-group">
-        <%= f.label :category, "カテゴリー", class: "form-label" %>
-        <%= f.select :category, options_for_select([['カテゴリー1', 'category1'], ['カテゴリー2', 'category2'], ['カテゴリー3', 'category3']]), {}, class: "form-input" %>
+        <%#= f.label :hoge, "タグ", class: "form-label" %>
+        <%#= f.text_field :hoge, class: "form-input", placeholder: "タグを入力" %>
       </div>
+
       <div class="form-group">
         <%= f.label :content, "内容", class: "form-label" %>
         <%= f.text_area :content, class: "form-input content-input", rows: 10, placeholder: "ここに内容を入力" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :start_time_1i, "投稿日時", class: "form-label" %>
+        <%= f.datetime_select(:start_time, {default: Time.now}, {class: "form-input-times"}) %>
       </div>
       <div class="form-group form-buttons">
         <%= f.submit "投稿する", class: "form-button submit-button" %>

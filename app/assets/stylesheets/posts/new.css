@@ -33,6 +33,20 @@
   color: #555;
 }
 
+.form-study-times{
+  display: flex;
+  line-height: 40px;
+}
+
+.form-input-times{
+  text-align: right;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 .form-input {
   width: 100%;
   padding: 10px;
