@@ -1,0 +1,99 @@
+.form-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-wrap {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-header-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.img-upload {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.img-upload .form-text {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.img-upload .click-upload {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.img-upload .click-upload p {
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-text-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.form-text {
+  font-weight: bold;
+}
+
+.indispensable {
+  color: red;
+}
+
+.optional{
+  color: blue;
+}
+
+.input-default {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.info-text {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.register-btn {
+  text-align: center;
+}
+
+.register-red-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.register-red-btn:hover {
+  background-color: #c0392b;
+}
