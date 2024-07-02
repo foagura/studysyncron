@@ -1,1 +1,17 @@
-<h1>Test Show</h1>
+<%= render 'shared/header' %>
+
+<div class="main">
+  <div class="post-detail-container">
+    <div class="post-show-header">
+      <h1 class="post-show-title"><%= @post.title %></h1>
+      <div class="post-show-meta">
+        <span class="post-show-author"><%= @post.user.nickname %></span>
+        <span class="post-show-date"><%= @post.created_at.strftime("%Y-%m-%d %H:%M") %></span>
+      </div>
+    </div>
+    <div class="post-show-content">
+      <%= @post.content %>
+      <%#= markdown_to_html(@post.content) %>
+    </div>
+  </div>
+</div>
