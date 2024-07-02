@@ -1,5 +1,6 @@
         <div class="content">
           <% posts.each do |post| %>
+            <%= link_to post_path(post.id) do%>
             <div class="post">
               <div class="post-header">
                 <div class="post-user"><%= post.user.nickname %></div>
@@ -20,5 +21,6 @@
                 </div>
               </div>
             </div>
+            <% end %>
           <% end %>
         </div>
