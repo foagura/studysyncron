@@ -7,20 +7,16 @@
     <div class="main-content">
       <div class="content-box">
         <div class="header">
+          <div class="header-title">
+            投稿一覧
+          </div>
           <div class="search-bar">
             <input type="text" placeholder="検索...">
-          </div>
-          <div class="user-info">
-            <div class="user-icon">👤</div>
-            <div class="user-name">user</div>
-            <div class="notifications">🔔</div>
-            <div class="settings">⚙️</div>
           </div>
         </div>
 
         <%= render 'shared/post_index', posts: @posts %>
 
-        </div>
       </div>
     </div>
   </div>

@@ -37,15 +37,19 @@ a{
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.header-title {
+  font-weight: bold;
+  border-bottom: 2px solid #777;
   margin-bottom: 20px;
 }
 
 .search-bar input {
-  width: 100%;
+  min-width: 40%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #868282;
   border-radius: 5px;
 }
 
