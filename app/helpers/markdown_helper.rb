@@ -10,8 +10,7 @@ module MarkdownHelper
       filter_html:         true, # ユーザーが入力したhtmlを出力しない
       hard_wrap:           true, # 改行をhtmlの<br>に置き換え
       space_after_headers: true,  # ヘッダー記号(#)と文字の間にスペース必要
-      link_attributes: { rel: 'nofollow', taget: '_blank' },
-      fenced_code_blocks: true
+      link_attributes: { rel: 'nofollow', taget: '_blank' }
     }
 
     options = {
@@ -19,7 +18,8 @@ module MarkdownHelper
       tables: true,
       autolink: true,
       lax_spacing: true,
-      quote: true
+      quote: true,
+      fenced_code_blocks: true
     }
 
     renderer = CustomRender.new(render_options)
