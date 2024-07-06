@@ -11,7 +11,7 @@
       <% if user_signed_in? && current_user.id == @post.user.id %>
         <div class="post-show-actions">
           <%= link_to '編集', edit_post_path(@post.id), class: 'btn edit-btn' %>
-          <%= link_to '削除', "#", method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn delete-btn' %>
+          <%= link_to '削除', post_path(@post.id), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？\n1度削除すると元に戻せません!" }, class: 'btn delete-btn' %>
         </div>
       <% end %>
     </div>

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :user_confirmation, only: [:edit]
 
   def index
@@ -32,6 +32,11 @@ class PostsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to root_path
   end
 
   private
