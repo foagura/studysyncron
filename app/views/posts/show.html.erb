@@ -5,7 +5,7 @@
     <div class="post-show-header">
       <h1 class="post-show-title"><%= @post.title %></h1>
       <div class="post-show-meta">
-        <span class="post-show-author"><%= @post.user.nickname %></span>
+        <span class="post-show-author"><%= "#{@post.user.nickname}さんの投稿内容" %></span>
         <span class="post-show-date"><%= @post.created_at.strftime("%Y-%m-%d %H:%M") %></span>
       </div>
     </div>
@@ -14,3 +14,7 @@
     </div>
   </div>
 </div>
+
+<script>
+  hljs.highlightAll();
+</script>

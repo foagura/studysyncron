@@ -1,10 +1,4 @@
 module MarkdownHelper
-  require 'rouge/plugins/redcarpet'
-
-  class CustomRender < Redcarpet::Render::HTML
-    include Rouge::Plugins::Redcarpet
-  end
-
   def markdown(text)
     render_options = {
       filter_html:         true, # ユーザーが入力したhtmlを出力しない
@@ -13,7 +7,7 @@ module MarkdownHelper
       link_attributes: { rel: 'nofollow', taget: '_blank' }
     }
 
-    options = {
+    extensions = {
       no_intra_emphasis: true,
       tables: true,
       autolink: true,
@@ -22,8 +16,8 @@ module MarkdownHelper
       fenced_code_blocks: true
     }
 
-    renderer = CustomRender.new(render_options)
-    markdown = Redcarpet::Markdown.new(renderer, options)
+    renderer = Redcarpet::Render::HTML.new(render_options)
+    markdown = Redcarpet::Markdown.new(renderer, extensions)
     markdown.render(text).html_safe
   end
 end

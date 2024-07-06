@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <!-- マークダウンテキストをHTMLに変換する為のmarked.jsの読み込み記述 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- プログラムコードをシンタックスハイライトする為のhighright.jsの読み込み記述 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
     <%= yield %>
   </body>
 </html>
