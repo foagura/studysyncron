@@ -24,6 +24,22 @@
   color: #999;
 }
 
+.post-show-actions {
+  margin-top: 10px;
+}
+
+.post-show-actions .btn {
+  margin-right: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 5px;
+  color: #000000;
+  border: 2px solid #696565;
+  border-radius: 5px;
+}
+
 .post-show-content {
   line-height: 1.6;
 }
