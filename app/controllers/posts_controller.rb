@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
   before_action :set_post, only: [:show, :edit, :update]
+  before_action :user_confirmation, only: [:edit]
 
   def index
     @posts = Post.all.order("created_at DESC")
@@ -42,5 +43,12 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def user_confirmation
+    post = Post.find(params[:id])
+    unless current_user.id == post.user_id
+      redirect_to root_path
+    end
   end
 end
