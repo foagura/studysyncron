@@ -1,0 +1,64 @@
+<%# cssは新規投稿用のものを併用しています。
+app/assets/stylesheets/posts/new.css %>
+
+<%= render 'shared/header' %>
+
+<div class="new-post-container">
+  <div class="new-post-left">
+    <div class="new-post-header">
+      <h1>投稿編集</h1>
+    </div>
+    <%= form_with model: @post, url: post_path(@post.id), local: true do |f| %>
+
+      <%= render 'shared/error_messages', model: @post %>
+
+      <div class="form-group">
+        <%= f.label :study_hours, "今日の学習時間", class: "form-label" %>
+        <div class="form-study-times">
+          <%= f.number_field :study_hours, class: "form-input-times", in: 0..23 %>時間
+          <%= f.number_field :study_minutes, class: "form-input-times", in: 0..59 %>分
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :title, "タイトル", class: "form-label" %>
+        <%= f.text_field :title, class: "form-input", placeholder: "タイトルを入力" %>
+      </div>
+      
+      <%#= タグ追加用コメントアウト %>
+      <div class="form-group">
+        <%#= f.label :hoge, "タグ", class: "form-label" %>
+        <%#= f.text_field :hoge, class: "form-input", placeholder: "タグを入力" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :content, "内容", class: "form-label" %>
+        <%= f.text_area :content, class: "form-input content-input", rows: 10, placeholder: "ここに内容を入力" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :start_time_1i, "投稿日時", class: "form-label" %>
+        <%= f.datetime_select(:start_time, {}, {class: "form-input-times"}) %>
+      </div>
+      <div class="form-group form-buttons">
+        <%= f.submit "投稿する", class: "form-button submit-button" %>
+        <%= link_to "キャンセル", posts_path, class: "form-button cancel-button" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="new-post-right">
+    <div class="post-preview-header">
+      <h2>プレビュー</h2>
+    </div>
+    <div class="post-preview">
+      <!-- 投稿内容のプレビュー表示。リアルタイムプレビューを行うためのJavaScriptが必要。 -->
+      <div class="preview-content", id="preview_content"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("post_content").addEventListener('input', function(){
+    let markdownText = this.value;
+    document.getElementById("preview_content").innerHTML = marked.parse(markdownText);
+    hljs.highlightAll();
+  });
+</script>
