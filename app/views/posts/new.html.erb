@@ -29,7 +29,8 @@
 
       <div class="form-group">
         <%= f.label :content, "内容", class: "form-label" %>
-        <%= f.text_area :content, class: "form-input content-input", rows: 10, placeholder: "ここに内容を入力" %>
+        <%= f.text_area :content, data: {controller: "markdown-upload", markdown_upload_url_value: rails_direct_uploads_url,
+        action: "drop->markdown-upload#dropUpload"}, class: "form-input content-input", rows: 10, placeholder: "ここに内容を入力" %>
       </div>
       <div class="form-group">
         <%= f.label :start_time_1i, "投稿日時", class: "form-label" %>
