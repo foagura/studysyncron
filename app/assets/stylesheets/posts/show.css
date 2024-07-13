@@ -1,0 +1,45 @@
+.post-detail-container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.post-show-header {
+  margin-bottom: 20px;
+}
+
+.post-show-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.post-show-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  color: #999;
+}
+
+.post-show-actions {
+  margin-top: 10px;
+}
+
+.post-show-actions .btn {
+  margin-right: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 5px;
+  color: #000000;
+  border: 2px solid #696565;
+  border-radius: 5px;
+}
+
+.post-show-content {
+  line-height: 1.6;
+}

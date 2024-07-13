@@ -1,0 +1,24 @@
+<div class="content">
+  <% posts.each do |post| %>
+    <div class="post">
+      <div class="post-header">
+        <div class="post-user"><%= link_to post.user.nickname, user_path(post.user.id), class: "post-user-link" %></div>
+        <div class="post-date"><%= post.created_at %></div>
+      </div>
+      <div class="post-body">
+        <%= link_to post.title, post_path(post), class: "post-link" %>
+      </div>
+      <div class="post-footer">
+        <div class="post-tag">
+          <div>#TEST投稿</div>
+        </div>
+        <div class="post-nav">
+          <ul>
+            <li>フォロー</li>
+            <li>お気に入り</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

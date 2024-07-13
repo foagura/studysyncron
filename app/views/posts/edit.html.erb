@@ -1,11 +1,14 @@
+<%# cssは新規投稿用のものを併用しています。
+app/assets/stylesheets/posts/new.css %>
+
 <%= render 'shared/header' %>
 
 <div class="new-post-container">
   <div class="new-post-left">
     <div class="new-post-header">
-      <h1>新規投稿</h1>
+      <h1>投稿編集</h1>
     </div>
-    <%= form_with model: @post, url: posts_path, local: true do |f| %>
+    <%= form_with model: @post, url: post_path(@post.id), local: true do |f| %>
 
       <%= render 'shared/error_messages', model: @post %>
 
@@ -29,12 +32,11 @@
 
       <div class="form-group">
         <%= f.label :content, "内容", class: "form-label" %>
-        <%= f.text_area :content, data: {controller: "markdown-upload", markdown_upload_url_value: rails_direct_uploads_url,
-        action: "drop->markdown-upload#dropUpload"}, class: "form-input content-input", rows: 10, placeholder: "ここに内容を入力" %>
+        <%= f.text_area :content, class: "form-input content-input", rows: 10, placeholder: "ここに内容を入力" %>
       </div>
       <div class="form-group">
         <%= f.label :start_time_1i, "投稿日時", class: "form-label" %>
-        <%= f.datetime_select(:start_time, {default: Time.now}, {class: "form-input-times"}) %>
+        <%= f.datetime_select(:start_time, {}, {class: "form-input-times"}) %>
       </div>
       <div class="form-group form-buttons">
         <%= f.submit "投稿する", class: "form-button submit-button" %>
@@ -47,7 +49,7 @@
       <h2>プレビュー</h2>
     </div>
     <div class="post-preview">
-      <!-- 投稿内容のプレビュー表示。 -->
+      <!-- 投稿内容のプレビュー表示。リアルタイムプレビューを行うためのJavaScriptが必要。 -->
       <div class="preview-content", id="preview_content"></div>
     </div>
   </div>
