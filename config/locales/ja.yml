@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        email: メールアドレス
+        profile: 自己紹介欄
+      post:
+        study_hours: 学習時間(時間)
+        study_minutes: 学習時間(分)
+        title: タイトル
+        content: 内容
