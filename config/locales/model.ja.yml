@@ -8,6 +8,7 @@ ja:
         email: メールアドレス
         profile: 自己紹介欄
       post:
+        start_time: 登録時刻
         study_hours: 学習時間(時間)
         study_minutes: 学習時間(分)
         title: タイトル

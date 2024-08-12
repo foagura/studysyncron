@@ -20,13 +20,6 @@
         <%= f.label :title, "タイトル", class: "form-label" %>
         <%= f.text_field :title, class: "form-input", placeholder: "タイトルを入力" %>
       </div>
-      
-      <%#= タグ追加用コメントアウト %>
-      <div class="form-group">
-        <%#= f.label :hoge, "タグ", class: "form-label" %>
-        <%#= f.text_field :hoge, class: "form-input", placeholder: "タグを入力" %>
-      </div>
-
       <div class="form-group">
         <%= f.label :content, "内容", class: "form-label" %>
         <%= f.text_area :content, data: {controller: "markdown-upload", markdown_upload_url_value: rails_direct_uploads_url,
