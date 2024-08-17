@@ -21,6 +21,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comments = @post.comments.includes(:user)
+    @comment = Comment.new
   end
 
   def edit
