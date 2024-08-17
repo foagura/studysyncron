@@ -10,7 +10,6 @@
         <div class="myprofile">
           <div class="profile-header">
             <div class="profile-pic">
-              <!-- userのプロフィール画像を表示するが、ない場合はデフォルトの画像を表示 -->
               <% if @user.image.attached? %>
                 <%= image_tag @user.image, alt: "Profile Picture", class: "avatar" %>
               <% else %>
@@ -18,18 +17,15 @@
               <% end %>
             </div>
             <div class="profile-name">
-              <!-- userのニックネームを表示 -->
               <h2><%= @user.nickname %></h2>
             </div>
           </div>
           <div class="profile-details">
             <div class="profile-item">
-              <!-- userの自己紹介を表示 -->
               <h3>自己紹介</h3>
               <p><%= @user.profile %></p>
             </div>
             <div class="profile-item">
-              <!-- userの総学習時間を表示 -->
               <h3>学習時間</h3>
               <p><%= '#' %> 時間</p>
             </div>
