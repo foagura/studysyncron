@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :user_confirmation, only: [:edit]
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.includes(:user).order("created_at DESC")
   end
 
   def new
