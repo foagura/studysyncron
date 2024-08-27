@@ -6,7 +6,7 @@
       <h1 class="post-show-title"><%= @post.title %></h1>
       <div class="post-show-meta">
         <span class="post-show-author"><%= "#{@post.user.nickname}さんの投稿内容" %></span>
-        <span class="post-show-date"><%= @post.created_at.strftime("%Y-%m-%d %H:%M") %></span>
+        <span class="post-show-date"><%= @post.created_at.to_fs(:datetime_jp) %></span>
       </div>
       <% if user_signed_in? && current_user.id == @post.user.id %>
         <div class="post-show-actions">
@@ -17,6 +17,27 @@
     </div>
     <div class="post-show-content">
       <%= markdown(@post.content) %>
+    </div>
+  </div>
+
+  <div class="comment-container">
+    <div class="comment-form">
+      <% if user_signed_in? %>
+        <%= form_with model: [@post, @comment], id: "comment-form" do |f| %>
+          <%= f.text_area :text , class: "comment-text"%>
+          <%= f.submit "コメントをする", class: "comment-submit" %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div id="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @post.comments.each do |comment| %>
+        <div class="comment">
+          <p class="user-info"><%= comment.user.nickname %>： </p>
+          <p><%= comment.text%></p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

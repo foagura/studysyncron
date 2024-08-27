@@ -15,6 +15,9 @@ module Studysyncron
     
     # 日本語の言語設定
     config.i18n.default_locale = :ja
+
+    # タイムゾーンを日本時刻に変更
+    config.time_zone = 'Tokyo'
     
     # Configuration for the application, engines, and railties goes here.
     #
