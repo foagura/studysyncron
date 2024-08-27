@@ -1,15 +1,31 @@
 import consumer from "channels/consumer"
 
-consumer.subscriptions.create("CommentChannel", {
-  connected() {
-    // Called when the subscription is ready for use on the server
-  },
+if(location.pathname.match(/\/posts\/\d/)){
 
-  disconnected() {
-    // Called when the subscription has been terminated by the server
-  },
+  consumer.subscriptions.create({
+    channel: "CommentChannel",
+    post_id: location.pathname.match(/\d+/)[0]
+  }, {
 
-  received(data) {
-    // Called when there's incoming data on the websocket for this channel
-  }
-});
+    connected() {
+      // Called when the subscription is ready for use on the server
+    },
+
+    disconnected() {
+      // Called when the subscription has been terminated by the server
+    },
+
+    received(data) {
+      const html = `
+        <div class="comment">
+          <p class="user-info">${data.user.nickname}： </p>
+          <p>${data.comment.text}</p>
+        </div>`;
+      const comments = document.getElementById("comments");
+      comments.insertAdjacentHTML('beforeend', html);
+      const commentForm = document.getElementById("comment-form");
+      commentForm.reset();
+    }
+  });
+};
+
